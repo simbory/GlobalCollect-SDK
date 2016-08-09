@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{72E1EFFF-9927-41E4-A20A-BE09DA41B067}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GlobalCollect</RootNamespace>
+    <AssemblyName>GlobalCollect</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>f8d2067f</NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\GlobalCollect.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\GlobalCollect.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GcHostedCheckoutsApi.cs" />
+    <Compile Include="GcResponses\GcCreateHostedCheckoutResponse.cs" />
+    <Compile Include="GcResponses\GcCreateSesstionResponse.cs" />
+    <Compile Include="GcResponses\GcGetHostedCheckoutResponse.cs" />
+    <Compile Include="GcResponses\GcRiskAssessCardResponse.cs" />
+    <Compile Include="GcResponses\GcApproveChallengedPaymentResponse.cs" />
+    <Compile Include="GcRefundsApi.cs" />
+    <Compile Include="GcResponses\GcRefundError.cs" />
+    <Compile Include="GcResponses\GcResponseBase.cs" />
+    <Compile Include="GcResponses\GcUndoCapturePaymentResponse.cs" />
+    <Compile Include="GcResponses\GcCancelPaymentResponse.cs" />
+    <Compile Include="GcResponses\GcRetrieveRefundResponse.cs" />
+    <Compile Include="GcResponses\GcCapturePaymentResponse.cs" />
+    <Compile Include="GcResponses\GcCancelRefundResponse.cs" />
+    <Compile Include="GcResponses\GcRefundResponse.cs" />
+    <Compile Include="GcResponses\GcRetrievePaymentResponse.cs" />
+    <Compile Include="GcResponses\GcDeleteTokenResponse.cs" />
+    <Compile Include="GcResponses\GcRetrieveTokenResponse.cs" />
+    <Compile Include="GcResponses\GcUpdateTokenResponse.cs" />
+    <Compile Include="GcResponses\GcRiskAccessBackAccountResponse.cs" />
+    <Compile Include="GcRiskAssessmentsApi.cs" />
+    <Compile Include="GcSesstionsApi.cs" />
+    <Compile Include="GcTokensApi.cs" />
+    <Compile Include="GcResponses\GcUndoApproveRefundResponse.cs" />
+    <Compile Include="Schema\AbstractOrderStatus.cs" />
+    <Compile Include="Schema\AbstractPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\AbstractPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\AbstractToken.cs" />
+    <Compile Include="Schema\AccountOnFile.cs" />
+    <Compile Include="Schema\AccountOnFileAttribute.cs" />
+    <Compile Include="Schema\AccountOnFileDisplayHints.cs" />
+    <Compile Include="Schema\AdditionalOrderInputAirlineData.cs" />
+    <Compile Include="Schema\AddressPersonal.cs" />
+    <Compile Include="Schema\ApprovePaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\ApprovePaymentNonSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\ApprovePaymentPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\ApprovePaymentSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\ApprovePayoutRequest.cs" />
+    <Compile Include="Schema\ApproveRefundRequest.cs" />
+    <Compile Include="Schema\ApproveTokenRequest.cs" />
+    <Compile Include="Schema\BankAccount.cs" />
+    <Compile Include="Schema\BankAccountBbanRefund.cs" />
+    <Compile Include="Schema\BankData.cs" />
+    <Compile Include="Schema\BankDetails.cs" />
+    <Compile Include="Schema\BankDetailsRequest.cs" />
+    <Compile Include="Schema\BankDetailsResponse.cs" />
+    <Compile Include="Schema\BankRefundMethodSpecificInput.cs" />
+    <Compile Include="Schema\BankTransferPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\BankTransferPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Schema\BINLookupRequest.cs" />
+    <Compile Include="Schema\BINLookupResponse.cs" />
+    <Compile Include="Schema\CancelApprovalPaymentResponse.cs" />
+    <Compile Include="Schema\CancelPaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\CancelPaymentResponse.cs" />
+    <Compile Include="Schema\CardPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Schema\CardWithoutCvv.cs" />
+    <Compile Include="Schema\CashPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\CashPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Schema\CashPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\CashPaymentProduct1503SpecificInput.cs" />
+    <Compile Include="Schema\CashPaymentProduct1504SpecificInput.cs" />
+    <Compile Include="Schema\CompanyInformation.cs" />
+    <Compile Include="Schema\ContactDetailsBase.cs" />
+    <Compile Include="Schema\ContactDetailsToken.cs" />
+    <Compile Include="Schema\ConvertAmount.cs" />
+    <Compile Include="Schema\CreatedPaymentOutput.cs" />
+    <Compile Include="Schema\CreateHostedCheckoutRequest.cs" />
+    <Compile Include="Schema\CreateHostedCheckoutResponse.cs" />
+    <Compile Include="Schema\CreatePaymentRequest.cs" />
+    <Compile Include="Schema\CreatePaymentResponse.cs" />
+    <Compile Include="Schema\CreatePayoutRequest.cs" />
+    <Compile Include="Schema\CreateTokenRequest.cs" />
+    <Compile Include="Schema\CreateTokenResponse.cs" />
+    <Compile Include="Schema\Creditor.cs" />
+    <Compile Include="Schema\CustomerBase.cs" />
+    <Compile Include="Schema\CustomerRiskAssessment.cs" />
+    <Compile Include="Schema\CustomerToken.cs" />
+    <Compile Include="Schema\CustomerTokenWithContactDetails.cs" />
+    <Compile Include="Schema\Debtor.cs" />
+    <Compile Include="Schema\Directory.cs" />
+    <Compile Include="Schema\DirectoryEntry.cs" />
+    <Compile Include="Schema\DisplayedData.cs" />
+    <Compile Include="Schema\EmptyValidator.cs" />
+    <Compile Include="Schema\ErrorResponse.cs" />
+    <Compile Include="Schema\FixedListValidator.cs" />
+    <Compile Include="Schema\FraudFields.cs" />
+    <Compile Include="Schema\GetHostedCheckoutResponse.cs" />
+    <Compile Include="Schema\HostedCheckoutSpecificInput.cs" />
+    <Compile Include="Schema\InvoicePaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\InvoicePaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\LabelTemplateElement.cs" />
+    <Compile Include="Schema\LengthValidator.cs" />
+    <Compile Include="Schema\LineItem.cs" />
+    <Compile Include="Schema\LineItemInvoiceData.cs" />
+    <Compile Include="Schema\LineItemLevel3InterchangeInformation.cs" />
+    <Compile Include="Schema\MandateApproval.cs" />
+    <Compile Include="Schema\MandateNonSepaDirectDebit.cs" />
+    <Compile Include="Schema\MandateSepaDirectDebit.cs" />
+    <Compile Include="Schema\MandateSepaDirectDebitWithMandateId.cs" />
+    <Compile Include="Schema\MandateSepaDirectDebitWithoutCreditor.cs" />
+    <Compile Include="Schema\NonSepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\NonSepaDirectDebitPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\NonSepaDirectDebitPaymentProduct705SpecificInput.cs" />
+    <Compile Include="Schema\NonSepaDirectDebitPaymentProduct707SpecificInput.cs" />
+    <Compile Include="Schema\OrderApprovePayment.cs" />
+    <Compile Include="Schema\OrderInvoiceData.cs" />
+    <Compile Include="Schema\OrderOutput.cs" />
+    <Compile Include="Schema\OrderReferences.cs" />
+    <Compile Include="Schema\OrderReferencesApprovePayment.cs" />
+    <Compile Include="Schema\OrderRiskAssessment.cs" />
+    <Compile Include="Schema\PaymentApprovalResponse.cs" />
+    <Compile Include="Schema\PaymentCreationReferences.cs" />
+    <Compile Include="Schema\PaymentErrorResponse.cs" />
+    <Compile Include="Schema\PaymentProduct.cs" />
+    <Compile Include="Schema\PaymentProductArray.cs" />
+    <Compile Include="Schema\PaymentProductDisplayHints.cs" />
+    <Compile Include="Schema\PaymentProductField.cs" />
+    <Compile Include="Schema\PaymentProductFieldDataRestrictions.cs" />
+    <Compile Include="Schema\PaymentProductFieldDisplayHints.cs" />
+    <Compile Include="Schema\PaymentProductFieldFormElement.cs" />
+    <Compile Include="Schema\PaymentProductFieldTooltip.cs" />
+    <Compile Include="Schema\PaymentProductFieldValidators.cs" />
+    <Compile Include="Schema\PaymentProductResponse.cs" />
+    <Compile Include="Schema\PaymentResponse.cs" />
+    <Compile Include="Schema\PayoutCustomer.cs" />
+    <Compile Include="Schema\PayoutErrorResponse.cs" />
+    <Compile Include="Schema\PayoutReferences.cs" />
+    <Compile Include="Schema\PayoutResponse.cs" />
+    <Compile Include="Schema\PayoutResult.cs" />
+    <Compile Include="Schema\PersonalInformation.cs" />
+    <Compile Include="Schema\PersonalInformationRiskAssessment.cs" />
+    <Compile Include="Schema\PersonalInformationToken.cs" />
+    <Compile Include="Schema\PersonalName.cs" />
+    <Compile Include="Schema\PersonalNameBase.cs" />
+    <Compile Include="Schema\PersonalNameRiskAssessment.cs" />
+    <Compile Include="Schema\PersonalNameToken.cs" />
+    <Compile Include="Schema\RangeValidator.cs" />
+    <Compile Include="Schema\RedirectPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\RedirectPaymentMethodSpecificInputBase.cs" />
+    <Compile Include="Schema\RedirectPaymentProduct809SpecificInput.cs" />
+    <Compile Include="Schema\RedirectPaymentProduct816SpecificInput.cs" />
+    <Compile Include="Schema\RedirectPaymentProduct882SpecificInput.cs" />
+    <Compile Include="Schema\RefundBankMethodSpecificOutput.cs" />
+    <Compile Include="Schema\RefundCardMethodSpecificOutput.cs" />
+    <Compile Include="Schema\RefundCustomer.cs" />
+    <Compile Include="Schema\RefundErrorResponse.cs" />
+    <Compile Include="Schema\RefundRequest.cs" />
+    <Compile Include="Schema\RefundResponse.cs" />
+    <Compile Include="Schema\RegularExpressionValidator.cs" />
+    <Compile Include="Schema\ResultDoRiskAssessment.cs" />
+    <Compile Include="Schema\RetailDecisionsCCFraudCheckOutput.cs" />
+    <Compile Include="Schema\RetrieveIINDetailResponse.cs" />
+    <Compile Include="GcResponses\GcRetrieveIINDetailResponse.cs" />
+    <Compile Include="GcResponses\GcCreateTokenResponse.cs" />
+    <Compile Include="Schema\AdditionalOrderInput.cs" />
+    <Compile Include="Schema\Address.cs" />
+    <Compile Include="Schema\AirlineData.cs" />
+    <Compile Include="Schema\AirlineFlightLeg.cs" />
+    <Compile Include="Schema\APIError.cs" />
+    <Compile Include="GcResponses\GcErrorBase.cs" />
+    <Compile Include="GcAuthenticator.cs" />
+    <Compile Include="GcApiBase.cs" />
+    <Compile Include="GcClient.cs" />
+    <Compile Include="GcConfiguration.cs" />
+    <Compile Include="GcPaymentApi.cs" />
+    <Compile Include="GcRequest.cs" />
+    <Compile Include="GcResponses\GcResponse.cs" />
+    <Compile Include="GcResponses\GcCreatePaymentError.cs" />
+    <Compile Include="GcResponses\GcCreatePaymentResponse.cs" />
+    <Compile Include="Schema\ContactDetails.cs" />
+    <Compile Include="Schema\CreateRefundBody.cs" />
+    <Compile Include="Schema\Name.cs" />
+    <Compile Include="Schema\PaymentCardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\ApprovePaymentRequest.cs" />
+    <Compile Include="Schema\BankAccountIban.cs" />
+    <Compile Include="Schema\BankTransferPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\CancelPaymentResult.cs" />
+    <Compile Include="Schema\CapturePaymentResult.cs" />
+    <Compile Include="Schema\CardEssentials.cs" />
+    <Compile Include="Schema\CardFraudResults.cs" />
+    <Compile Include="Schema\CardPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\CreatePaymentResult.cs" />
+    <Compile Include="GcServicesApi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GcRequestHeader.cs" />
+    <Compile Include="GcRequestParam.cs" />
+    <Compile Include="GcRequestJsonSerializer.cs" />
+    <Compile Include="Schema\AmountOfMoney.cs" />
+    <Compile Include="Schema\BankAccountBban.cs" />
+    <Compile Include="Schema\BillingAddress.cs" />
+    <Compile Include="Schema\Card.cs" />
+    <Compile Include="Schema\CardPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\DirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\PaymentStatus.cs" />
+    <Compile Include="Schema\RefundReferences.cs" />
+    <Compile Include="Schema\RefundResult.cs" />
+    <Compile Include="Schema\CreateTokenResult.cs" />
+    <Compile Include="Schema\Customer.cs" />
+    <Compile Include="Schema\FraudResults.cs" />
+    <Compile Include="Schema\FraudResultsRetailDecisions.cs" />
+    <Compile Include="Schema\KeyValuePair.cs" />
+    <Compile Include="Schema\Level3SummaryData.cs" />
+    <Compile Include="Schema\MerchantAction.cs" />
+    <Compile Include="Schema\InvoiceData.cs" />
+    <Compile Include="Schema\Order.cs" />
+    <Compile Include="Schema\OrderStatusOutput.cs" />
+    <Compile Include="Schema\OrderTypeInformation.cs" />
+    <Compile Include="Schema\Payment.cs" />
+    <Compile Include="Schema\PaymentCreationOutput.cs" />
+    <Compile Include="Schema\PaymentOutput.cs" />
+    <Compile Include="Schema\PaymentProduct836SpecificOutput.cs" />
+    <Compile Include="Schema\PaymentProduct840CustomerAccount.cs" />
+    <Compile Include="Schema\PaymentProduct840SpecificOutput.cs" />
+    <Compile Include="Schema\PaymentReferences.cs" />
+    <Compile Include="Schema\PaymentStatusOutput.cs" />
+    <Compile Include="Schema\RedirectData.cs" />
+    <Compile Include="Schema\RedirectPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\RefundEWalletMethodSpecificOutput.cs" />
+    <Compile Include="Schema\RefundMethodSpecificOutput.cs" />
+    <Compile Include="Schema\RefundOutput.cs" />
+    <Compile Include="Schema\RefundPaymentProduct840CustomerAccount.cs" />
+    <Compile Include="Schema\RefundPaymentProduct840SpecificOutput.cs" />
+    <Compile Include="Schema\RiskAssessCardRequest.cs" />
+    <Compile Include="Schema\RiskAssessment.cs" />
+    <Compile Include="Schema\RiskAssessmentBankAccount.cs" />
+    <Compile Include="Schema\RiskAssessmentCard.cs" />
+    <Compile Include="Schema\RiskAssessmentResponse.cs" />
+    <Compile Include="Schema\SepaDirectDebitPaymentMethodSpecificInput.cs" />
+    <Compile Include="Schema\SepaDirectDebitPaymentMethodSpecificOutput.cs" />
+    <Compile Include="Schema\SessionRequest.cs" />
+    <Compile Include="Schema\SessionResponse.cs" />
+    <Compile Include="Schema\Swift.cs" />
+    <Compile Include="Schema\TestConnection.cs" />
+    <Compile Include="Schema\ThreeDSecureResults.cs" />
+    <Compile Include="Schema\TokenBody.cs" />
+    <Compile Include="Schema\TokenCard.cs" />
+    <Compile Include="Schema\TokenCardData.cs" />
+    <Compile Include="Schema\TokenEWallet.cs" />
+    <Compile Include="Schema\TokenEWalletData.cs" />
+    <Compile Include="Schema\TokenizePaymentRequest.cs" />
+    <Compile Include="Schema\TokenNonSepaDirectDebit.cs" />
+    <Compile Include="Schema\TokenNonSepaDirectDebitPaymentProduct705SpecificData.cs" />
+    <Compile Include="Schema\TokenNonSepaDirectDebitPaymentProduct707SpecificData.cs" />
+    <Compile Include="Schema\TokenResponse.cs" />
+    <Compile Include="Schema\TokenSepaDirectDebit.cs" />
+    <Compile Include="Schema\TokenSepaDirectDebitWithoutCreditor.cs" />
+    <Compile Include="Schema\UpdateTokenRequest.cs" />
+    <Compile Include="Schema\ValidationBankAccountCheck.cs" />
+    <Compile Include="Schema\ValidationBankAccountOutput.cs" />
+    <Compile Include="Schema\ValueMappingElement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.2.2\build\Microsoft.Net.Compilers.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
