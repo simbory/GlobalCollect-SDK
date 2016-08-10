@@ -17,8 +17,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC HostedCheckouts API instance</returns>
-        public static GcHostedCheckoutsApi HostedCheckouts(GcConfiguration config)
+        public static GcHostedCheckoutsApi HostedCheckouts(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcHostedCheckoutsApi(config);
         }
 
@@ -37,8 +41,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Services API instance</returns>
-        public static GcServicesApi Services(GcConfiguration config)
+        public static GcServicesApi Services(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcServicesApi(config);
         }
 
@@ -57,8 +65,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Payments API instance</returns>
-        public static GcPaymentApi Payments(GcConfiguration config)
+        public static GcPaymentApi Payments(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcPaymentApi(config);
         }
 
@@ -77,8 +89,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Refunds API instance</returns>
-        public static GcRefundsApi Refunds(GcConfiguration config)
+        public static GcRefundsApi Refunds(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcRefundsApi(config);
         }
 
@@ -97,8 +113,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Tokens API instance</returns>
-        public static GcTokensApi Tokens(GcConfiguration config)
+        public static GcTokensApi Tokens(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcTokensApi(config);
         }
 
@@ -117,8 +137,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Tokens API instance</returns>
-        public static GcRiskAssessmentsApi RiskAssessments(GcConfiguration config)
+        public static GcRiskAssessmentsApi RiskAssessments(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcRiskAssessmentsApi(config);
         }
 
@@ -137,8 +161,12 @@ namespace GlobalCollect
         /// </summary>
         /// <param name="config">GC config setting</param>
         /// <returns>GC Sesstions API instance</returns>
-        public static GcSesstionsApi Sesstions(GcConfiguration config)
+        public static GcSesstionsApi Sesstions(GcConfiguration config = null)
         {
+            if (config == null)
+            {
+                config = GcConfiguration.Default;
+            }
             return new GcSesstionsApi(config);
         }
 
