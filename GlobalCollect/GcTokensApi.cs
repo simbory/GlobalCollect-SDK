@@ -30,7 +30,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath(""));
             req.AddBody(body);
@@ -50,7 +50,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(tokenId))
             {
-                throw new ArgumentNullException("tokenId");
+                throw new ArgumentNullException(nameof(tokenId));
             }
             var req = new GcRequest(Config, Method.GET, BuildApiPath("{0}", tokenId));
             return Execute(req);
@@ -70,11 +70,11 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(tokenId))
             {
-                throw new ArgumentNullException("tokenId");
+                throw new ArgumentNullException(nameof(tokenId));
             }
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.PUT, BuildApiPath("{0}", tokenId));
             req.AddBody(body);
@@ -92,7 +92,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(tokenId))
             {
-                throw new ArgumentNullException("tokenId");
+                throw new ArgumentNullException(nameof(tokenId));
             }
             var url = string.IsNullOrEmpty(mandateCancelDate)
                 ? BuildApiPath("{0}", tokenId)

@@ -31,7 +31,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("cards"));
             req.AddBody(body);
@@ -50,7 +50,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("bankaccounts"));
             req.AddBody(body);

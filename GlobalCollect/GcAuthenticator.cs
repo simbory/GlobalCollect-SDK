@@ -114,11 +114,11 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(httpMethod) || string.IsNullOrEmpty(httpMethod.Trim()))
             {
-                throw new ArgumentNullException("httpMethod");
+                throw new ArgumentNullException(nameof(httpMethod));
             }
             if (resourceUri == null)
             {
-                throw new ArgumentNullException("resourceUri");
+                throw new ArgumentNullException(nameof(resourceUri));
             }
             var dataToSign = ToDataSign(httpMethod, resourceUri, requestHeaders);
             return "GCS v1HMAC:" + ApiKeyId + ":" + CreateAuthenticationSignature(dataToSign);

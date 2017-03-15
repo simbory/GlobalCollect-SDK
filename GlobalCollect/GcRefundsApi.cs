@@ -23,7 +23,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(refundId))
             {
-                throw new ArgumentNullException("refundId");
+                throw new ArgumentNullException(nameof(refundId));
             }
             var req = new GcRequest(Config, Method.GET, BuildApiPath("{0}", refundId));
             return Execute(req);
@@ -43,7 +43,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(refundId))
             {
-                throw new ArgumentNullException("refundId");
+                throw new ArgumentNullException(nameof(refundId));
             }
             if (amount < 1)
             {
@@ -67,7 +67,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(refundId))
             {
-                throw new ArgumentNullException("refundId");
+                throw new ArgumentNullException(nameof(refundId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/cancelapproval", refundId));
             req.AddHeader(GetServerHeader());
@@ -87,7 +87,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(refundId))
             {
-                throw new ArgumentNullException("refundId");
+                throw new ArgumentNullException(nameof(refundId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/cancel", refundId));
             req.AddHeader(GetServerHeader());

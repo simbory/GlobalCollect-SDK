@@ -54,7 +54,7 @@ namespace GlobalCollect
             HttpMethod = httpMethod;
             if (string.IsNullOrEmpty(apiPath))
             {
-                throw new ArgumentNullException("apiPath");
+                throw new ArgumentNullException(nameof(apiPath));
             }
             if (apiPath.StartsWith("/"))
             {

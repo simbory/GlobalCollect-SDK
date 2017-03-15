@@ -25,7 +25,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath(""));
             req.AddBody(body);
@@ -46,7 +46,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(hostedCheckoutId))
             {
-                throw new ArgumentNullException("hostedCheckoutId");
+                throw new ArgumentNullException(nameof(hostedCheckoutId));
             }
             var req = new GcRequest(Config, Method.GET, BuildApiPath("{0}", hostedCheckoutId));
             return Execute(req);

@@ -26,7 +26,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath(""));
             req.AddBody(body);

@@ -24,7 +24,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, ApiGroupKey);
             req.AddHeader(GetServerHeader());
@@ -41,7 +41,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             var req = new GcRequest(Config, Method.GET, BuildApiPath(paymentId));
             return Execute(req);
@@ -60,7 +60,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/processchallenged", paymentId));
             return Execute(req);
@@ -84,11 +84,11 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/approve", paymentId));
             req.AddHeader(GetServerHeader());
@@ -108,7 +108,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/tokenize", paymentId));
             req.AddHeader(GetServerHeader());
@@ -124,7 +124,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/cancel", paymentId));
             return Execute(req);
@@ -142,11 +142,11 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/refund", paymentId));
             req.AddHeader(GetServerHeader());
@@ -167,7 +167,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(paymentId))
             {
-                throw new ArgumentNullException("paymentId");
+                throw new ArgumentNullException(nameof(paymentId));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("{0}/cancelapproval", paymentId));
             return Execute(req);

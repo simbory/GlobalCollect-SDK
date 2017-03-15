@@ -19,21 +19,7 @@ namespace GlobalCollect
         /// <returns>GC HostedCheckouts API instance</returns>
         public static GcHostedCheckoutsApi HostedCheckouts(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcHostedCheckoutsApi(config);
-        }
-
-        /// <summary>
-        /// HostedCheckouts API: https://developer.globalcollect.com/documentation/api/server/#hostedcheckouts
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC HostedCheckouts API instance</returns>
-        public static GcHostedCheckoutsApi HostedCheckouts(string merchantID)
-        {
-            return new GcHostedCheckoutsApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -43,21 +29,7 @@ namespace GlobalCollect
         /// <returns>GC Services API instance</returns>
         public static GcServicesApi Services(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcServicesApi(config);
-        }
-
-        /// <summary>
-        /// Services API: https://developer.globalcollect.com/documentation/api/server/#services
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Services API instance</returns>
-        public static GcServicesApi Services(string merchantID)
-        {
-            return new GcServicesApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -67,21 +39,7 @@ namespace GlobalCollect
         /// <returns>GC Payments API instance</returns>
         public static GcPaymentApi Payments(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcPaymentApi(config);
-        }
-
-        /// <summary>
-        /// Payments API: https://developer.globalcollect.com/documentation/api/server/#payments
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Payments API instance</returns>
-        public static GcPaymentApi Payments(string merchantID)
-        {
-            return new GcPaymentApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -91,21 +49,7 @@ namespace GlobalCollect
         /// <returns>GC Refunds API instance</returns>
         public static GcRefundsApi Refunds(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcRefundsApi(config);
-        }
-
-        /// <summary>
-        /// Refunds API: https://developer.globalcollect.com/documentation/api/server/#refunds
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Refunds API instance</returns>
-        public static GcRefundsApi Refunds(string merchantID)
-        {
-            return new GcRefundsApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -115,21 +59,7 @@ namespace GlobalCollect
         /// <returns>GC Tokens API instance</returns>
         public static GcTokensApi Tokens(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcTokensApi(config);
-        }
-
-        /// <summary>
-        /// Tokens API: https://developer.globalcollect.com/documentation/api/server/#tokens
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Tokens API instance</returns>
-        public static GcTokensApi Tokens(string merchantID)
-        {
-            return new GcTokensApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -139,21 +69,7 @@ namespace GlobalCollect
         /// <returns>GC Tokens API instance</returns>
         public static GcRiskAssessmentsApi RiskAssessments(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcRiskAssessmentsApi(config);
-        }
-
-        /// <summary>
-        /// RiskAssessments API: https://developer.globalcollect.com/documentation/api/server/#riskassessments
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Tokens API instance</returns>
-        public static GcRiskAssessmentsApi RiskAssessments(string merchantID)
-        {
-            return new GcRiskAssessmentsApi(new GcConfiguration(merchantID));
         }
 
         /// <summary>
@@ -163,21 +79,7 @@ namespace GlobalCollect
         /// <returns>GC Sesstions API instance</returns>
         public static GcSesstionsApi Sesstions(GcConfiguration config = null)
         {
-            if (config == null)
-            {
-                config = GcConfiguration.Default;
-            }
             return new GcSesstionsApi(config);
-        }
-
-        /// <summary>
-        /// Sessions API: https://developer.globalcollect.com/documentation/api/server/#sessions
-        /// </summary>
-        /// <param name="merchantID">GC merchant ID</param>
-        /// <returns>GC Sesstions API instance</returns>
-        public static GcSesstionsApi Sesstions(string merchantID)
-        {
-            return new GcSesstionsApi(new GcConfiguration(merchantID));
         }
     }
 }

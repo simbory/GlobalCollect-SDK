@@ -1,7 +1,5 @@
 using System;
-using System.Configuration;
 using System.Linq;
-using System.Net;
 using GlobalCollect.GcResponses;
 using Newtonsoft.Json;
 using RestSharp;
@@ -35,9 +33,17 @@ namespace GlobalCollect
             ApiGroupKey = groupKey;
             Config = config;
             _client = new RestClient(Config.BaseUrl);
-            if (ConfigurationManager.AppSettings["Environment"] == "DEV" && !string.IsNullOrEmpty(ConfigurationManager.AppSettings["Proxy"]))
+            if (config.Proxy != null)
             {
-                _client.Proxy = new WebProxy(new Uri(ConfigurationManager.AppSettings["Proxy"]));
+                _client.Proxy = config.Proxy;
+            }
+            if (config.ReadWriteTimeout > 0)
+            {
+                _client.ReadWriteTimeout = config.ReadWriteTimeout;
+            }
+            if (config.Timeout > 0)
+            {
+                _client.Timeout = config.Timeout;
             }
         }
 

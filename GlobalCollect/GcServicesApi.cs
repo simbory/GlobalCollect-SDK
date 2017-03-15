@@ -56,7 +56,7 @@ namespace GlobalCollect
         {
             if (body == null)
             {
-                throw new ArgumentNullException("body");
+                throw new ArgumentNullException(nameof(body));
             }
             var req = new GcRequest(Config, Method.POST, BuildApiPath("convert/bankaccount"));
             req.AddBody(body);
@@ -75,7 +75,7 @@ namespace GlobalCollect
         {
             if (string.IsNullOrEmpty(source))
             {
-                throw new ArgumentNullException("source");
+                throw new ArgumentNullException(nameof(source));
             }
             if (string.IsNullOrEmpty(target))
             {
