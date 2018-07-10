@@ -14,12 +14,11 @@ namespace GlobalCollect
         }
 
         /// <summary>
-        /// The refund API allows you to manipulate refunds that have been created on a payment. Funds will be refunded 
-        /// to either the card or wallet that was originally charged or to a bank account if a direct refund is not possible
+        /// The refund API allows you to manipulate refunds that have been created on a payment. Funds will be refunded to either the card or wallet that was originally charged or to a bank account if a direct refund is not possible 
         /// </summary>
         /// <param name="refundId">the refund ID created at the payment api</param>
         /// <returns>please refer to https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__get </returns>
-        public GcRetrieveRefundResponse RetrieveRefund(string refundId)
+        public GcRefundResponse GetRefund(string refundId)
         {
             if (string.IsNullOrEmpty(refundId))
             {
@@ -39,7 +38,7 @@ namespace GlobalCollect
         /// <param name="refundId">the refund ID</param>
         /// <param name="amount">Refund amount to be approved</param>
         /// <returns>please refer to https://developer.globalcollect.com/documentation/api/server/#__merchantId__refunds__refundId__approve_post </returns>
-        public GcRefundResponse ApproveRefund(string refundId, long amount)
+        public GcApproveRefoundResponse ApproveRefund(string refundId, long amount)
         {
             if (string.IsNullOrEmpty(refundId))
             {

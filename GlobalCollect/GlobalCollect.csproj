@@ -10,9 +10,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GlobalCollect</RootNamespace>
     <AssemblyName>GlobalCollect</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <NuGetPackageImportStamp>f8d2067f</NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,11 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
+      <HintPath>..\packages\RestSharp.105.2.3\lib\net451\RestSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -53,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GcHostedCheckoutsApi.cs" />
+    <Compile Include="GcResponses\GcApproveRefoundResponse.cs" />
     <Compile Include="GcResponses\GcCreateHostedCheckoutResponse.cs" />
     <Compile Include="GcResponses\GcCreateSesstionResponse.cs" />
     <Compile Include="GcResponses\GcGetHostedCheckoutResponse.cs" />
@@ -63,7 +65,6 @@
     <Compile Include="GcResponses\GcResponseBase.cs" />
     <Compile Include="GcResponses\GcUndoCapturePaymentResponse.cs" />
     <Compile Include="GcResponses\GcCancelPaymentResponse.cs" />
-    <Compile Include="GcResponses\GcRetrieveRefundResponse.cs" />
     <Compile Include="GcResponses\GcCapturePaymentResponse.cs" />
     <Compile Include="GcResponses\GcCancelRefundResponse.cs" />
     <Compile Include="GcResponses\GcRefundResponse.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="GcResponses\GcRetrieveTokenResponse.cs" />
     <Compile Include="GcResponses\GcUpdateTokenResponse.cs" />
     <Compile Include="GcResponses\GcRiskAccessBackAccountResponse.cs" />
+    <Compile Include="GcResponses\NoContentResult.cs" />
     <Compile Include="GcRiskAssessmentsApi.cs" />
     <Compile Include="GcSesstionsApi.cs" />
     <Compile Include="GcTokensApi.cs" />
