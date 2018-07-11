@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>GlobalCollect</id>
+    <version>1.1.5</version>
+    <title>GlobalCollect SDK</title>
+    <authors>Simbory</authors>
+    <owners>Mullen Loweprofero</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+    <projectUrl>https://github.com/Simbory/GlobalCollect-SDK</projectUrl>
+    <iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+    <description>Global Collect Payment C# SDK.
+      API Document address: https://developer.globalcollect.com/documentation/api/server/</description>
+    <summary>fix nuget reference error</summary>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright Mullen Loweprofero 2018</copyright>
+    <language>en-US</language>
+    <dependencies>
+      <group targetFramework=".NETFramework4.5.1">
+        <dependency id="Newtonsoft.Json" version="6.0.8" />
+        <dependency id="RestSharp" version="105.2.3" />
+      </group>
+      <group targetFramework=".NETFramework4.5.2">
+        <dependency id="Newtonsoft.Json" version="6.0.8" />
+        <dependency id="RestSharp" version="105.2.3" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
